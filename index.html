@@ -4,98 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SamjhaDo - Upload a screenshot and get a simple explanation, scam check, reply, or error help." />
-  <title>SamjhaDo | Screenshot bhejo. Simple answer pao.</title>
+  <title>SamjhaDo | Screenshot bhejo. Samajh jao.</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
   <header class="topbar">
-    <div class="brand-wrap">
-      <div class="logo-mark">S</div>
-      <div>
-        <div class="brand">SamjhaDo</div>
+    <a class="brand-wrap" href="index.html" aria-label="SamjhaDo home">
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 11.5C10 8.46 12.46 6 15.5 6h17C35.54 6 38 8.46 38 11.5v16c0 3.04-2.46 5.5-5.5 5.5H22l-8.3 7.1c-.9.77-2.3.13-2.3-1.06V33H15.5A5.5 5.5 0 0 1 10 27.5v-16Z" fill="currentColor"/>
+          <path d="M19 14.5h10M19 20h7.5M19 25.5h4.5" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M33 11l.7 1.8L35.5 13.5l-1.8.7L33 16l-.7-1.8-1.8-.7 1.8-.7L33 11Z" fill="#FFD45A"/>
+        </svg>
+      </div>
+      <div class="brand-copy">
+        <div class="brand">Samjha<span>Do</span></div>
         <div class="tagline-mini">by NXN Technologies</div>
       </div>
+    </a>
+
+    <div class="header-actions">
+      <span class="header-trust">Private by design</span>
+      <button id="languageBtn" class="ghost-btn" aria-label="Change language">
+        <span>🌐</span> EN
+      </button>
     </div>
-    <button id="languageBtn" class="ghost-btn" aria-label="Change language">EN</button>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="eyebrow">Simple answers from confusing screenshots</div>
-      <h1>Screenshot bhejo.<br><span>Simple answer pao.</span></h1>
-      <p>SMS, WhatsApp, bill, form, payment error or technical issue. Upload it and SamjhaDo will explain what it means and what to do next.</p>
+    <section class="hero-shell">
+      <div class="hero">
+        <div class="eyebrow"><span class="pulse-dot"></span> Your everyday screenshot assistant</div>
+        <h1>Confusing screenshot?<br><span>SamjhaDo.</span></h1>
+        <p class="hero-lead">Upload any confusing message, bill, form, payment screen or error. Get a simple explanation and know exactly what to do next.</p>
 
-      <div class="trust-row">
-        <span>✓ No signup for demo</span>
-        <span>✓ Mobile friendly</span>
-        <span>✓ English • Hindi • Hinglish</span>
-      </div>
-    </section>
-
-    <section class="tool-card" id="uploadSection">
-      <div class="step-label">STEP 1</div>
-      <h2>Upload your screenshot</h2>
-
-      <label class="upload-box" for="fileInput" id="dropZone">
-        <input id="fileInput" type="file" accept="image/*" hidden />
-        <div class="upload-icon">↑</div>
-        <strong>Tap to upload screenshot</strong>
-        <small>PNG, JPG or WebP</small>
-      </label>
-
-      <div id="previewWrap" class="preview-wrap hidden">
-        <img id="imagePreview" alt="Uploaded screenshot preview" />
-        <button id="removeImageBtn" class="text-btn">Remove image</button>
-      </div>
-    </section>
-
-    <section class="tool-card">
-      <div class="step-label">STEP 2</div>
-      <h2>What do you want SamjhaDo to do?</h2>
-
-      <div class="action-grid">
-        <button class="action-card active" data-mode="explain">
-          <span class="action-icon">💡</span>
-          <span class="action-title">Explain This</span>
-          <span class="action-desc">Tell me what this means</span>
-        </button>
-
-        <button class="action-card" data-mode="scam">
-          <span class="action-icon">🛡️</span>
-          <span class="action-title">Scam Check</span>
-          <span class="action-desc">Is this suspicious?</span>
-        </button>
-
-        <button class="action-card" data-mode="reply">
-          <span class="action-icon">💬</span>
-          <span class="action-title">Write Reply</span>
-          <span class="action-desc">Create a ready response</span>
-        </button>
-
-        <button class="action-card" data-mode="error">
-          <span class="action-icon">🔧</span>
-          <span class="action-title">Fix Error</span>
-          <span class="action-desc">Help with a technical issue</span>
-        </button>
-      </div>
-
-      <div class="language-choice">
-        <span>Answer in</span>
-        <div class="chip-row">
-          <button class="chip active" data-lang="English">English</button>
-          <button class="chip" data-lang="Hindi">Hindi</button>
-          <button class="chip" data-lang="Hinglish">Hinglish</button>
+        <div class="hero-pills">
+          <span>💬 Explain it</span>
+          <span>🛡️ Check scams</span>
+          <span>✍️ Write replies</span>
+          <span>🛠️ Fix errors</span>
         </div>
+
+        <a class="hero-cta" href="#uploadSection">Upload a screenshot <span>→</span></a>
+        <p class="hero-note">No signup needed for the demo</p>
       </div>
 
-      <button id="analyzeBtn" class="primary-btn">SamjhaDo ✨</button>
-      <p class="demo-note">Offline demo uses sample analysis. AI connection comes next.</p>
+      <div class="hero-demo" aria-hidden="true">
+        <div class="phone-card">
+          <div class="phone-bar"><span></span><span></span></div>
+          <div class="mock-message">
+            <div class="mock-avatar">₹</div>
+            <div>
+              <b>Payment Alert</b>
+              <p>Your transaction is pending. Click the link to update...</p>
+            </div>
+          </div>
+          <div class="scan-line"></div>
+          <div class="mock-result">
+            <div class="mock-result-top"><span class="shield-icon">✓</span><b>SamjhaDo says</b></div>
+            <strong>⚠️ This looks suspicious</strong>
+            <small>Don't click the link. Verify it in the official app first.</small>
+          </div>
+        </div>
+        <div class="floating-card float-one">हिंदी ✓</div>
+        <div class="floating-card float-two">Simple answer ✨</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>3</strong><span>Languages</span></div>
+      <div><strong>4</strong><span>Useful modes</span></div>
+      <div><strong>₹9</strong><span>Demo unlock</span></div>
+      <div><strong>0</strong><span>Complex prompts</span></div>
+    </section>
+
+    <section class="workspace" id="uploadSection">
+      <div class="workspace-heading">
+        <span class="section-kicker">TRY SAMJHADO</span>
+        <h2>One screenshot. One clear answer.</h2>
+        <p>Start by uploading the screenshot you want help with.</p>
+      </div>
+
+      <section class="tool-card upload-card">
+        <div class="card-step"><span>1</span><div><b>Upload screenshot</b><small>Your image stays on your device in this demo.</small></div></div>
+
+        <label class="upload-box" for="fileInput" id="dropZone">
+          <input id="fileInput" type="file" accept="image/*" hidden />
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v3.5A2.5 2.5 0 0 0 7.5 20h9a2.5 2.5 0 0 0 2.5-2.5V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <strong>Drop a screenshot here</strong>
+          <span>or <u>browse from your device</u></span>
+          <small>PNG, JPG or WebP • Mobile screenshots work best</small>
+        </label>
+
+        <div id="previewWrap" class="preview-wrap hidden">
+          <img id="imagePreview" alt="Uploaded screenshot preview" />
+          <button id="removeImageBtn" class="text-btn">Remove image</button>
+        </div>
+      </section>
+
+      <section class="tool-card action-panel">
+        <div class="card-step"><span>2</span><div><b>Choose what you need</b><small>SamjhaDo will shape the answer around your goal.</small></div></div>
+
+        <div class="action-grid">
+          <button class="action-card active" data-mode="explain">
+            <span class="action-icon icon-blue">💡</span>
+            <span class="action-copy"><span class="action-title">Explain This</span><span class="action-desc">Simple meaning + next step</span></span>
+            <span class="choice-tick">✓</span>
+          </button>
+
+          <button class="action-card" data-mode="scam">
+            <span class="action-icon icon-red">🛡️</span>
+            <span class="action-copy"><span class="action-title">Scam Check</span><span class="action-desc">Spot suspicious signals</span></span>
+            <span class="choice-tick">✓</span>
+          </button>
+
+          <button class="action-card" data-mode="reply">
+            <span class="action-icon icon-green">💬</span>
+            <span class="action-copy"><span class="action-title">Write Reply</span><span class="action-desc">Ready-to-send response</span></span>
+            <span class="choice-tick">✓</span>
+          </button>
+
+          <button class="action-card" data-mode="error">
+            <span class="action-icon icon-purple">🔧</span>
+            <span class="action-copy"><span class="action-title">Fix Error</span><span class="action-desc">Understand and troubleshoot</span></span>
+            <span class="choice-tick">✓</span>
+          </button>
+        </div>
+
+        <div class="language-choice">
+          <div><b>Answer language</b><small>Choose what feels easiest to understand.</small></div>
+          <div class="chip-row">
+            <button class="chip active" data-lang="English">English</button>
+            <button class="chip" data-lang="Hindi">हिंदी</button>
+            <button class="chip" data-lang="Hinglish">Hinglish</button>
+          </div>
+        </div>
+
+        <button id="analyzeBtn" class="primary-btn"><span>✨</span> SamjhaDo</button>
+        <p class="demo-note">Offline prototype • Sample analysis only • No image leaves your device</p>
+      </section>
     </section>
 
     <section id="resultSection" class="result-card hidden">
       <div class="result-top">
         <div>
-          <div class="step-label">RESULT</div>
+          <div class="step-label">YOUR RESULT</div>
           <h2 id="resultHeading">Here’s what it means</h2>
         </div>
         <div id="riskBadge" class="risk-badge safe">LOW RISK</div>
@@ -120,41 +180,39 @@
       </div>
 
       <div class="paywall">
-        <div>
-          <strong>Full analysis unlock</strong>
-          <p>Detailed explanation + action plan + reply</p>
-        </div>
+        <div><strong>Unlock full analysis</strong><p>Detailed explanation + action plan + ready reply</p></div>
         <div class="price">₹9</div>
         <button id="unlockBtn" class="unlock-btn">Unlock</button>
       </div>
-
-      <p class="privacy-note">For the live version, uploaded screenshots should be processed securely and not stored longer than needed.</p>
+      <p class="privacy-note">For the live version, screenshots should be processed securely and deleted as soon as they are no longer needed.</p>
     </section>
 
-    <section class="how-it-works">
-      <h2>Built for everyday confusion</h2>
+    <section class="use-section">
+      <div class="workspace-heading compact">
+        <span class="section-kicker">MADE FOR REAL LIFE</span>
+        <h2>When you don’t know what a screen means</h2>
+      </div>
       <div class="use-grid">
-        <div><span>📱</span><b>Messages</b><small>SMS, WhatsApp, email</small></div>
-        <div><span>🧾</span><b>Bills</b><small>Payments and charges</small></div>
-        <div><span>📄</span><b>Forms</b><small>School, bank, government</small></div>
-        <div><span>🖥️</span><b>Errors</b><small>Phone, PC, website</small></div>
+        <div class="use-card"><span class="use-emoji">📱</span><b>Messages</b><small>SMS, WhatsApp, email and alerts</small></div>
+        <div class="use-card"><span class="use-emoji">🧾</span><b>Bills & Payments</b><small>Charges, failed payments and dues</small></div>
+        <div class="use-card"><span class="use-emoji">📄</span><b>Forms & Notices</b><small>School, bank and official documents</small></div>
+        <div class="use-card"><span class="use-emoji">🖥️</span><b>Tech Errors</b><small>Phone, PC, app and website issues</small></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand">SamjhaDo</div>
-    <p>A product by NXN Technologies</p>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="about.html">About</a>
+    <div class="footer-inner">
+      <div class="footer-brand-wrap">
+        <div class="logo-mark small">S</div>
+        <div><div class="footer-brand">SamjhaDo</div><p>A product by NXN Technologies</p></div>
+      </div>
+      <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="about.html">About</a></div>
     </div>
-    <small>© 2026 NXN Technologies. All rights reserved.</small>
+    <div class="footer-bottom"><small>© 2026 NXN Technologies. All rights reserved.</small><small>Simple answers. Better decisions.</small></div>
   </footer>
 
   <div id="toast" class="toast">Copied</div>
-
   <script src="assets/js/app.js"></script>
 </body>
 </html>
