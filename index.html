@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SamjhaDo - Upload a screenshot and get a simple explanation, scam check, reply, or error help." />
+  <title>SamjhaDo | Screenshot bhejo. Simple answer pao.</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="logo-mark">S</div>
+      <div>
+        <div class="brand">SamjhaDo</div>
+        <div class="tagline-mini">by NXN Technologies</div>
+      </div>
+    </div>
+    <button id="languageBtn" class="ghost-btn" aria-label="Change language">EN</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Simple answers from confusing screenshots</div>
+      <h1>Screenshot bhejo.<br><span>Simple answer pao.</span></h1>
+      <p>SMS, WhatsApp, bill, form, payment error or technical issue. Upload it and SamjhaDo will explain what it means and what to do next.</p>
+
+      <div class="trust-row">
+        <span>✓ No signup for demo</span>
+        <span>✓ Mobile friendly</span>
+        <span>✓ English • Hindi • Hinglish</span>
+      </div>
+    </section>
+
+    <section class="tool-card" id="uploadSection">
+      <div class="step-label">STEP 1</div>
+      <h2>Upload your screenshot</h2>
+
+      <label class="upload-box" for="fileInput" id="dropZone">
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <div class="upload-icon">↑</div>
+        <strong>Tap to upload screenshot</strong>
+        <small>PNG, JPG or WebP</small>
+      </label>
+
+      <div id="previewWrap" class="preview-wrap hidden">
+        <img id="imagePreview" alt="Uploaded screenshot preview" />
+        <button id="removeImageBtn" class="text-btn">Remove image</button>
+      </div>
+    </section>
+
+    <section class="tool-card">
+      <div class="step-label">STEP 2</div>
+      <h2>What do you want SamjhaDo to do?</h2>
+
+      <div class="action-grid">
+        <button class="action-card active" data-mode="explain">
+          <span class="action-icon">💡</span>
+          <span class="action-title">Explain This</span>
+          <span class="action-desc">Tell me what this means</span>
+        </button>
+
+        <button class="action-card" data-mode="scam">
+          <span class="action-icon">🛡️</span>
+          <span class="action-title">Scam Check</span>
+          <span class="action-desc">Is this suspicious?</span>
+        </button>
+
+        <button class="action-card" data-mode="reply">
+          <span class="action-icon">💬</span>
+          <span class="action-title">Write Reply</span>
+          <span class="action-desc">Create a ready response</span>
+        </button>
+
+        <button class="action-card" data-mode="error">
+          <span class="action-icon">🔧</span>
+          <span class="action-title">Fix Error</span>
+          <span class="action-desc">Help with a technical issue</span>
+        </button>
+      </div>
+
+      <div class="language-choice">
+        <span>Answer in</span>
+        <div class="chip-row">
+          <button class="chip active" data-lang="English">English</button>
+          <button class="chip" data-lang="Hindi">Hindi</button>
+          <button class="chip" data-lang="Hinglish">Hinglish</button>
+        </div>
+      </div>
+
+      <button id="analyzeBtn" class="primary-btn">SamjhaDo ✨</button>
+      <p class="demo-note">Offline demo uses sample analysis. AI connection comes next.</p>
+    </section>
+
+    <section id="resultSection" class="result-card hidden">
+      <div class="result-top">
+        <div>
+          <div class="step-label">RESULT</div>
+          <h2 id="resultHeading">Here’s what it means</h2>
+        </div>
+        <div id="riskBadge" class="risk-badge safe">LOW RISK</div>
+      </div>
+
+      <div class="result-block">
+        <h3>What happened</h3>
+        <p id="resultSummary"></p>
+      </div>
+
+      <div class="result-block">
+        <h3>What you should do</h3>
+        <ol id="resultSteps"></ol>
+      </div>
+
+      <div id="replyBlock" class="result-block">
+        <h3>Ready reply</h3>
+        <div class="reply-box">
+          <p id="resultReply"></p>
+          <button id="copyBtn" class="secondary-btn">Copy reply</button>
+        </div>
+      </div>
+
+      <div class="paywall">
+        <div>
+          <strong>Full analysis unlock</strong>
+          <p>Detailed explanation + action plan + reply</p>
+        </div>
+        <div class="price">₹9</div>
+        <button id="unlockBtn" class="unlock-btn">Unlock</button>
+      </div>
+
+      <p class="privacy-note">For the live version, uploaded screenshots should be processed securely and not stored longer than needed.</p>
+    </section>
+
+    <section class="how-it-works">
+      <h2>Built for everyday confusion</h2>
+      <div class="use-grid">
+        <div><span>📱</span><b>Messages</b><small>SMS, WhatsApp, email</small></div>
+        <div><span>🧾</span><b>Bills</b><small>Payments and charges</small></div>
+        <div><span>📄</span><b>Forms</b><small>School, bank, government</small></div>
+        <div><span>🖥️</span><b>Errors</b><small>Phone, PC, website</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">SamjhaDo</div>
+    <p>A product by NXN Technologies</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About</a>
+    </div>
+    <small>© 2026 NXN Technologies. All rights reserved.</small>
+  </footer>
+
+  <div id="toast" class="toast">Copied</div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
