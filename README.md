@@ -1,45 +1,45 @@
-# SamjhaDo Offline MVP
+# SamjhaDo Trust Refresh
 
-A mobile-first offline prototype for SamjhaDo by NXN Technologies.
+Trust-focused offline UI refresh for SamjhaDo by NXN Technologies.
 
-## Included
-- Screenshot upload and local preview
-- Explain This
-- Scam Check
-- Write Reply
-- Fix Error
-- English / Hindi / Hinglish demo outputs
-- ₹9 unlock placeholder
-- Razorpay integration placeholder
-- Privacy / Terms / About pages
-- Fully static HTML/CSS/JavaScript
-
-## Run locally
-Double-click `index.html`.
-
-If browser security blocks any local JavaScript behavior, run a simple local server:
-
-### Python
-python -m http.server 8000
-
-Then open:
-http://localhost:8000
+## What changed
+- New trust-first homepage and cleaner logo treatment
+- Prominent Login button
+- Working offline test-login flow
+- Test OTP: `123456`
+- One-click free sample that shows a complete result
+- Clear "No card needed" and "try before paying" messaging
+- Strong safety notice: SamjhaDo never needs OTP / UPI PIN / CVV / password
+- Visible NXN Technologies identity
+- Clear product limitations instead of fake trust claims
+- English / Hindi / Hinglish sample
+- Mobile-first responsive layout
 
 ## Important
-This version does NOT upload screenshots or call an AI model.
-The next development stage is:
+The login is intentionally a UI prototype. It does NOT send an OTP and does NOT create an account.
 
-1. Connect a secure server-side AI endpoint.
-2. Send screenshot to the vision-capable model.
-3. Force structured JSON output:
-   - summary
-   - risk level
-   - risk reasons
-   - next steps
-   - suggested reply
-4. Connect Razorpay checkout.
-5. Add server-side payment verification.
-6. Add privacy controls and deletion policy.
-7. Deploy to chosen hosting and point samjhado.in.
+Uploaded screenshots are only previewed locally in this build. The live AI is not connected.
 
-Never put an OpenAI or Razorpay secret key directly in `assets/js/app.js`.
+## Files to replace
+For the full new experience replace:
+- `index.html`
+- `assets/css/style.css`
+- `assets/js/app.js`
+
+The JS must also be replaced because the new login and free-sample features need it.
+
+## Test
+1. Open `index.html`
+2. Click `Try 1 free sample` or `Use our sample screenshot`
+3. Change English / Hindi / Hinglish if desired
+4. Click `Login`
+5. Enter any 10-digit mobile number
+6. Use test OTP: `123456`
+
+## Before public launch
+- Replace mock login with secure OTP authentication
+- Connect the screenshot AI endpoint server-side
+- Add actual screenshot-retention/deletion policy
+- Add real privacy contact/support details
+- Connect Razorpay only after pricing is final
+- Never expose AI or Razorpay secret keys in browser JavaScript
